@@ -1,35 +1,7 @@
-#include "./include/pilha.h"
+#include "../include/pilha.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <string.h>
-
-int palindromo(itemType palavra[], int tamanho, itemType invertida[], int tamanhoInvertida) {
-  printf("Digite uma palavra: ");
-  scanf("%s", palavra);
-  setbuf(stdin, NULL); // limpa o buffer
-
-  tamanho = strlen(palavra);
-
-  int i;
-
-  //Inverter a palavra copiada
-  for (int i = 0; i < tamanho / 2; i++) { //só irá até o meio
-    if (palavra[i] != palavra[tamanho - i - 1]) {
-      printf("\nA palavra inserida nao é um palindromo.");
-
-      return 1;
-    }
-    else {
-      printf("\nA palavra inserida é um palindromo.");
-
-      return 0;
-    }
-  }
-
-  // Caso nenhuma das condições sejam aceitas
-  return -1;
-}
 
 // Imprimindo a Pilha
 void imprimir(Pilha *p) {
@@ -64,7 +36,7 @@ Pilha* push(Pilha *p, int valor) {
 }
 
 // Removendo elemento
-Pilha* pop(Pilha *p) {
+Pilha* pop(Pilha *p, int cod, int vol) {
   if (p != NULL) {
     Pilha *aux = p;
 
@@ -79,4 +51,19 @@ Pilha* pop(Pilha *p) {
   }
 
   return p;
+}
+
+int retonarTamanho(Pilha *p, int contador) {
+  Pilha *aux = p;
+  aux->info = contador;
+  contador = 0;
+
+  while (aux != NULL) {
+    contador++;
+    aux = aux->prox;
+  }
+
+  printf("\nQuantidade de elementos == %d", contador);
+
+  return 0;
 }

@@ -5,6 +5,7 @@
 int main(void) {
   Pilha *inicio = NULL;
   int op, numero;
+  int cod, vol;
 
   do {
     printf("\n| 1 - para inserir um elemento\n");
@@ -25,7 +26,13 @@ int main(void) {
         imprimir(inicio);
         break;
       case 3:
-        inicio = pop(inicio);
+        printf("Informe o código: ");
+        scanf("%d", &cod);
+
+        printf("Informe o volume: ");
+        scanf("%d", &vol);
+
+        inicio = pop(inicio, cod, vol);
         break;
       case 0:
         printf("Fim das operações\n");
