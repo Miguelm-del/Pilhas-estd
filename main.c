@@ -2,15 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
- * 1 - Adapte de modo a implementar a pilha com listas encadeadas.
- * 2 - Utilizando a pilha criada, faça uma função que leia uma string e retorne 1,
- * se a string for um palíndromo, 0, caso contrário.
- * Exemplos de palavras palíndromos: ovo, subinoonibus, ana
-*/
-
 int main(void) {
   Pilha *inicio = NULL;
+  int op, numero;
 
   do {
     printf("\n| 1 - para inserir um elemento\n");
@@ -32,9 +26,6 @@ int main(void) {
         break;
       case 3:
         inicio = pop(inicio);
-        break;
-      case 4:
-        palindromo(palavra, qtd1, invertida, qtd2);
         break;
       case 0:
         printf("Fim das operações\n");
