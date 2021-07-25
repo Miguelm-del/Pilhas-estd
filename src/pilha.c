@@ -10,7 +10,7 @@ void imprimir(Pilha *p) {
   Pilha *aux = p;
 
   while (aux != NULL) {
-    printf("%d\n", aux->info);
+    printf("%d ", aux->info);
 
     aux = aux->prox;
   }
@@ -21,7 +21,7 @@ Pilha* push(Pilha *p, int valor) {
   Pilha *aux = (Pilha *)malloc(sizeof(Pilha));
 
   if (aux == NULL) {
-    printf("\nLista vazia");
+    printf("\nPilha vazia");
 
     return aux;
   }
@@ -36,15 +36,13 @@ Pilha* push(Pilha *p, int valor) {
 }
 
 // Removendo elemento
-Pilha* pop(Pilha *p, int cod, int vol) {
+Pilha* popSuperior(Pilha *p, int cod, int vol) {
   if (p != NULL) {
     Pilha *aux = p;
 
     p = aux->prox;
 
     free(aux);
-
-    printf("\nElemento removido!");
   }
   else {
     printf("\nPilha vazia");

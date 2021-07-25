@@ -4,8 +4,11 @@
 
 int main(void) {
   Pilha *inicio = NULL;
-  int op, numero;
+  Pilha2 *inicio2 = NULL;
+  Pilha3 *inicio3 = NULL;
+  int op;
   int cod, vol;
+  int cont = 0;
 
   do {
     printf("\n| 1 - para inserir um elemento\n");
@@ -17,10 +20,11 @@ int main(void) {
 
     switch(op) {
       case 1:
-        printf("Informe um valor: ");
-        scanf("%d", &numero);
+        printf("Informe a quantidade: ");
+        scanf("%d", &vol);
 
-        inicio = push(inicio, numero);
+        // Alagoas
+        inicio = push(inicio, vol);
         break;
       case 2:
         imprimir(inicio);
@@ -32,7 +36,9 @@ int main(void) {
         printf("Informe o volume: ");
         scanf("%d", &vol);
 
-        inicio = pop(inicio, cod, vol);
+        inicio = popSuperior(inicio, cod, vol);
+
+        printf("\nOrigem: pilha 1\nCódigo: %d\nVolume: %d\n", cod, vol);
         break;
       case 0:
         printf("Fim das operações\n");
