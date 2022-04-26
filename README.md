@@ -1,6 +1,6 @@
 # Projeto de pilhas - estruturas de dados
 
-> Esse é um repositório usado para o trabalho de estruturas de dados. O trabalho tem como objetivo estudar a lógica empregada na estrutura de pilhas.
+> Esse é um repositório usado para o trabalho de estruturas de dados. O trabalho tem como objetivo estudar a lógica empregada na estrutura de pilhas utilizando a linguagem de programação C.
 
 # Como executar?
 
